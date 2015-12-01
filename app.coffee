@@ -58,6 +58,39 @@ app.get '/models', (req, res) ->
 
     res.send classes
 
+
+app.get '/modelsarr', (req, res) ->
+
+  ps = (new imjs.Service(root: mine.url).fetchModel() for mine in mines)
+
+  Q.all(ps).then (immodels) ->
+
+    classes = {}
+
+    for immodel in immodels
+
+      # Get the mine name based on the URL
+      index = immodel.service.root.indexOf("/service/")
+      root = immodel.service.root.substring 0, index
+      {name} = _.findWhere mines, {url: root}
+
+      for imclass, values of immodel.classes
+
+        classes[imclass] ?= {}
+
+        for attribute, value of values.attributes
+
+          classes[imclass][attribute] ?= []
+          classes[imclass][attribute].push name
+
+    classarr = []
+    for key, val of classes
+      obj = classes[key]
+      obj.key = key
+      classarr.push obj
+
+    res.send classarr
+
 port = process.env.PORT or 5000
 
 app.listen port, -> console.log 'Listening on ' + port

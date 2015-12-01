@@ -1,4 +1,24 @@
-<div class="flex-row sticky">
+<!-- <table datatable="" class="row-border hover">
+    <thead>
+    <tr>
+        <th></th>
+        <th ng-repeat="mine in mines">{{mine.name}}</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="class in classes track by class.key">
+        <td>{{class.key}}</td>
+      </tr>
+    </tbody>
+</table> -->
+
+
+<table datatable="" dt-options="dtOptions" dt-columns="dtColumns" class="row-border hover"></table>
+
+
+
+
+<!-- <div class="flex-row sticky">
   <div class="flex-item"></div>
   <div class="flex-item" ng-repeat="mine in mines">
     {{mine.name}}
@@ -12,4 +32,4 @@
     <div class="flex-item" ng-repeat="mine in mines track by mine.name" ng-class="{'positive': exists(mine.name, value)}">
     </div>
   </div>
-</div>
+</div> -->
