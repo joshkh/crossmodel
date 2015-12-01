@@ -1,0 +1,15 @@
+<div class="flex-row sticky">
+  <div class="flex-item"></div>
+  <div class="flex-item" ng-repeat="mine in mines">
+    {{mine.name}}
+  </div>
+</div>
+
+<div style="100%;" ng-repeat="(classname, attributes) in classes track by classname">
+  <h3>{{classname}}</h3>
+  <div class="flex-row" ng-repeat="(attribute, value) in attributes track by attribute">
+    <div class="flex-item">{{attribute}}</div>
+    <div class="flex-item" ng-repeat="mine in mines track by mine.name" ng-class="{'positive': exists(mine.name, value)}">
+    </div>
+  </div>
+</div>
