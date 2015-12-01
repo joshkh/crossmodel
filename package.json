@@ -45,6 +45,7 @@
   "dependencies": {
     "coffee-middleware": "^0.3.0",
     "coffee-script": "^1.10.0",
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "imjs": "^3.15.0"
   }
 }
