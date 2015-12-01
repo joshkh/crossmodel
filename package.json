@@ -51,6 +51,7 @@
     "coffee-middleware": "^0.3.0",
     "coffee-script": "^1.10.0",
     "express": "^4.13.3",
+    "grunt": "^0.4.5",
     "imjs": "^3.15.0",
     "q": "^1.4.1",
     "underscore": "^1.8.3"
