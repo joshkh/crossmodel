@@ -47,6 +47,7 @@
     "node": "5.1.0"
   },
   "dependencies": {
+    "bower": "^1.6.8",
     "coffee-middleware": "^0.3.0",
     "coffee-script": "^1.10.0",
     "express": "^4.13.3",
